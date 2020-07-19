@@ -15,19 +15,22 @@ IncludeOptional conf.d/vhost/*.conf
 vim /etc/httpd/conf.d/vhost/www.testing.com.conf
 
 ##### type this configuration
-<VirtualHost *:80>
+
+    <VirtualHost *:80>
+
         ServerName testing.com
         DocumentRoot /data/www/testing.com
-
+        
         CustomLog /data/www/logs/testing.com-access.log combined
         ErrorLog /data/www/logs/testing.com-error.log
-
+        
         <Directory "/data/www/testing.com">
                 Options -Indexes -MultiViews -FollowSymlinks +SymLinksIfOwnerMatch
                 AllowOverride all
                 Require all granted
         </Directory>
-</VirtualHost>
+        
+    </VirtualHost>
 
 ##### make example application with html and make log location
 mkdir -p /data/www/testing.com
