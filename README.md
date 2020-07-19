@@ -1,20 +1,20 @@
-##### step by step install apache (httpd) on centos 7
+# step by step install apache (httpd) on centos 7
 
-##### Install Package Apache
-yum install httpd -y
-systemctl enable httpd
-service httpd start
+# Install Package Apache
+    yum install httpd -y
+    systemctl enable httpd
+    service httpd start
 
-##### create folder for place of configuration
-mkdir -p /etc/httpd/conf.d/vhost
+# create folder for place of configuration
+    mkdir -p /etc/httpd/conf.d/vhost
 
-##### this line to the end of file /etc/httpd/conf/httpd.conf
-IncludeOptional conf.d/vhost/*.conf
+# this line to the end of file /etc/httpd/conf/httpd.conf
+    IncludeOptional conf.d/vhost/*.conf
 
-##### crate new file configuration 
-vim /etc/httpd/conf.d/vhost/www.testing.com.conf
+# crate new file configuration 
+    vim /etc/httpd/conf.d/vhost/www.testing.com.conf
 
-##### type this configuration
+# type this configuration
 
     <VirtualHost *:80>
 
@@ -32,20 +32,20 @@ vim /etc/httpd/conf.d/vhost/www.testing.com.conf
         
     </VirtualHost>
 
-##### make example application with html and make log location
+# make example application with html and make log location
     mkdir -p /data/www/testing.com
     mkdir -p /data/www/logs
     vim /data/www/testing.com/index.html
-##### type this code and save
+# type this code and save
     <html>
       <body>
         Test Apache
       </body>
     </html>
 
-##### confim configuration with command
-httpd -t
+# confim configuration with command
+    httpd -t
 
-##### Restart Apache service
-service httpd restart
+# Restart Apache service
+    service httpd restart
 
