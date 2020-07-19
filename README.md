@@ -33,15 +33,15 @@ vim /etc/httpd/conf.d/vhost/www.testing.com.conf
     </VirtualHost>
 
 ##### make example application with html and make log location
-mkdir -p /data/www/testing.com
-mkdir -p /data/www/logs
-vim /data/www/testing.com/index.html
+    mkdir -p /data/www/testing.com
+    mkdir -p /data/www/logs
+    vim /data/www/testing.com/index.html
 ##### type this code and save
-<html>
-  <body>
-    Test Apache
-  </body>
-</html>
+    <html>
+      <body>
+        Test Apache
+      </body>
+    </html>
 
 ##### confim configuration with command
 httpd -t
